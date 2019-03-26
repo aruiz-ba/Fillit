@@ -12,13 +12,7 @@
 
 #include "../includes/fillit.h"
 
-int		ft_parseerr(void)
-{
-	ft_putstr("error");
-	return (0);
-}
-
-int		ft_validinputerr(void)
+int		ft_err(void)
 {
 	ft_putstr("error");
 	return (0);
@@ -35,9 +29,9 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	if (ft_parse_file(&m, argv[1]) <= 0)
-		return (ft_parseerr());
+		return (ft_err());
 	if (ft_valid_input(&m) <= 0)
-		return (ft_validinputerr());
+		return (ft_err());
 	ft_move_minos(&m);
 	biggerboard(&m, &brd);
 	printboard(brd);

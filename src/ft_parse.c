@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "../includes/fillit.h"
 
 int		validchar(char *str)
 {
@@ -71,7 +71,7 @@ int		ft_parse_file(t_m *m, char *root)
 				return (0);
 			loop(m, &parse);
 			parse.x = -1;
-			if (parse.bknum > 3)
+			if ((parse.y == 3 && parse.bknum != 3) || parse.bknum > 3)
 				return (0);
 		}
 		parse.y = -1;
